@@ -5,7 +5,7 @@ const SearchBar = () => {
     return (
         <div className="searchBar">
            <input placeholder="Enter your IP address"></input> 
-           <button onClick="">Submit</button>
+           <button onClick="getLocation">Submit</button>
         </div>
     )
 }

@@ -28,15 +28,16 @@
   background-color: white;
   margin: 80px auto 0;
   width: 80%;
+  display: flex;
   justify-content: center;
   height: 140px;
   box-shadow: 1px 2px 8px rgb(53, 53, 53);
   border-radius: 12px;
 }
 
-.infoBox p {
+.infoBox h6 {
   display: inline-block;
-  margin: 20px 140px;
+  margin: 20px 80px;
   color: gray;
-  font-size: 13px;;
+  font-size: 12px;
 }
