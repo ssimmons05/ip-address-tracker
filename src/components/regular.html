@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing</title>
+    <link rel="stylesheet" href="new-styling.css">
+</head>
+
+<body>
+    <button id="getText">Get Text</button>
+    <div id="output">Hello</div>
+
+
+    <script>
+        document.getElementById("getText").addEventListener('click', getText);
+
+        function getText() {
+            fetch("https://geo.ipify.org/api/v1?apiKey=at_9266dgV17onwJseGusY9R1eYLhtne&ipAddress=8.8.8.8")
+                .then((res) => res.json())
+                .then((data) => {
+                    let location = (`${data.location.region}, ${data.location.city} - ${data.location.postalCode}`)
+
+                    
+                    console.log(data.isp)
+                    console.log(data.ip)
+                    console.log(data)
+                   
+
+
+                    let output = "<h3>Heading</h3>";
+                    output +=
+                        `<ul>
+                                <h5>IP Address</h5>
+                                <li>${location}</li>
+                                <h5>IP Address</h5>
+                                <li>IP Address: ${data.ip}</li>
+                                <h5>IP Address</h5>
+                                <li>ISP: ${data.isp}</li>
+                                <h5>IP Address</h5>
+                                <li>Location: ${data.location.timezone}</li>
+                        </ul>`;
+
+                    document.getElementById("output").innerHTML = output;
+                    console.log(output);
+                })
+        }
+    </script>
+</body>
+
+</html>
