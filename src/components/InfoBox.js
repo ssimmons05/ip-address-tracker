@@ -1,17 +1,10 @@
-import React, {useState, useEffect} from 'react'
 import "../App.css"
 
     const InfoBox = () => {
-      const [products, setProducts] = useState([]);
-
       
-
-      return (
-        <div id="infoBox">
-            <p id="output"></p>
-          {products.map((product) => (
-            <p key={product.id}>{product.title}</p>
-          ))}
+     return (
+        <div id="output" className ="infoBox">
+            
         </div>
       );
     }

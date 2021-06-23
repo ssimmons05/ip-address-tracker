@@ -1,5 +1,11 @@
-li {
+ul, li {
     display: inline-block;
     text-decoration: none;
     position: relative;
+}
+
+#output ul, li {
+    text-decoration: none;
+    display: inline;
+    background-color: green;
 }

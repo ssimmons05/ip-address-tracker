@@ -9,9 +9,8 @@ import InfoBox from './components/InfoBox.js'
   const App = () => {
     
   
-    return (
+    return ( 
     <div> 
- 
       <TopSection />
       <SearchBar />
       <InfoBox />
