@@ -5,16 +5,22 @@
 
 .topSection {
   background-color: rgb(11, 104, 158);
-  /* background-image: url("./london_map.jpg"); */
+  background-image: url("./good_map.jpg");
+  box-shadow: 3px 3px 3px gray;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   height: 40vh ;
-  color: white;
+  z-index: 3;
 }
 
 .topSection h1 {
   padding-top: 20px;
+  text-shadow: 
+  /* 2px 2px rgb(211, 211, 211), */
+  1px 1px 2px rgb(14, 14, 14);
+  color: rgb(247, 148, 0);
+  border-radius: 10px;
 }
 
 .searchBar {
@@ -45,10 +51,10 @@
   height: 140px;
   box-shadow: 1px 2px 8px rgb(53, 53, 53);
   border-radius: 12px;
+  z-index: 3;
 }
 
 .infoBox h6 {
-  
   margin: 20px 80px;
   color: gray;
   font-size: 12px;
@@ -97,7 +103,6 @@
 #headings h5:last-child {
   margin-right: 20px;
 }
-
 
 #map {
   height: 60vh;
