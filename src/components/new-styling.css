@@ -4,8 +4,3 @@ ul, li {
     position: relative;
 }
 
-#output ul, li {
-    text-decoration: none;
-    display: inline;
-    background-color: green;
-}

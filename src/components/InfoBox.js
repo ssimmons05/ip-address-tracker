@@ -4,12 +4,12 @@ import "../App.css"
       
      return (
         <div id="output" className ="infoBox">
-            
+              
         </div>
       );
     }
     
-    export default InfoBox
+    export default InfoBox 
     
    
    
