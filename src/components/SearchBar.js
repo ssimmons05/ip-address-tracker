@@ -1,18 +1,27 @@
 import React, {useState} from 'react'
 import "../App.css"
 
-const SearchBar = () => {
-    // const [info, setInfo] = useState("");
-    // let info = document.querySelector(".searchBar").innerHTML;
-    // console.log(info);
+const SearchBar = ({setLatitude, setLongitude, setInfo, setIPAddress, IPAddress}) => {
 
+    const takeInput = (event) => {
+        setIPAddress(event.target.value);
+    }
 
-    function getText() {
-        // let address=document.querySelector(".searchBar").innerHTML;
-        fetch(`https://geo.ipify.org/api/v1?apiKey=at_9266dgV17onwJseGusY9R1eYLhtne&ipAddress=208.80.152.2`)
+    const url = `https://geo.ipify.org/api/v1?apiKey=at_9266dgV17onwJseGusY9R1eYLhtne&ipAddress=${IPAddress}`
+    
+    
+    function getText(event) {
+        event.preventDefault();
+        console.log(IPAddress);
+        // if (!IPAddress) {
+        //     return alert("Please enter an address");
+        // }
+        fetch(url)
             .then((res) => res.json())
             .then((data) => {
-                console.log(data);
+                setInfo(data);
+                setLatitude(data.location.lat);
+                setLongitude(data.location.lng);
                 let location = (`${data.location.region}, ${data.location.city} - ${data.location.postalCode}`)
 
                 let output = ""
@@ -35,15 +44,14 @@ const SearchBar = () => {
                     ;
 
                 document.getElementById("output").innerHTML = output;
-                console.log(output);
             })
     }
 
     return (
-        <div className="searchBar">
-            <input placeholder="Enter your IP address"></input> 
-            <button id="getText" onClick={getText}>Submit</button>
-        </div> 
+        <form className="searchBar" onSubmit={getText}>
+            <input id="input" placeholder="  Enter your IP address" onChange={takeInput} />
+            <button type="submit" id="getText">Submit</button>
+        </form> 
     )
 }
 
