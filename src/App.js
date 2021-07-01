@@ -5,7 +5,6 @@ import TopSection from './components/TopSection.js'
 import SearchBar from './components/SearchBar.js'
 import InfoBox from './components/InfoBox.js'
 
-
   const App = () => {
     
     const [IPAddress, setIPAddress] = useState(''); //replace '8.8.8.8' with local computer's IP address)
@@ -13,34 +12,15 @@ import InfoBox from './components/InfoBox.js'
     const [longitude, setLongitude] = useState(0);
     const [latitude, setLatitude] = useState(0);
 
-  // useEffect(() => {
-  //   console.log("1: Runs on every render.");
-  // });
-    
-  // useEffect(() => {
-  //   console.log("2: Runs on initial render only");
-  // },[]);
-
-  // useEffect(() => {
-  //   console.log("3: Runs on initial render and on change of dependencies.");
-  // },[longitude]);
-
-  useEffect(() => {
-    // Fetch data from API on mount
-    
-    console.log("2: Runs on initial render only");
-  },[]);
-
-
     return ( 
     <div> 
       <TopSection />
       <SearchBar setIPAddress={setIPAddress} setLongitude={setLongitude} setLatitude={setLatitude} setInfo={setInfo} IPAddress={IPAddress} />
-      <InfoBox />
+      <InfoBox info={info}/>
       <BottomSection position={[latitude, longitude]} />
     </div>
-  )
-}
+    )
+  }
 
 export default App
 

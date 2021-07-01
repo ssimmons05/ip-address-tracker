@@ -1,10 +1,30 @@
 import "../App.css"
 
-    const InfoBox = () => {
+    const InfoBox = ({info}) => {
+
+      // const area = (`${info.location.region}, ${info.location.city} - ${info.location.postalCode}`)
       
-     return (
+      return (
         <div id="output" className ="infoBox">
+          <div>
+            <ul id="headings">
+                <h5>IP Address</h5>
+                <h5>ISP</h5>                                                        
+                <h5>Location</h5>                           
+                <h5>TimeZone Address</h5>   
+            </ul>
+                
+            { info.location &&  
+            <ul id="information">
+              <li>{info.ip}</li>
+              <li>{info.isp}</li>
+              <li>{info.location.city + ", " + info.location.region + " " + info.location.postalCode}</li>
+              {/* <li>{area}</li> */}
+              <li>{info.location.timezone}</li>
               
+            </ul>
+            } 
+          </div>   
         </div>
       );
     }
