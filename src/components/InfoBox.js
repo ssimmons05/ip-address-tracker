@@ -1,8 +1,6 @@
 import "../App.css"
 
     const InfoBox = ({info}) => {
-
-      // const area = (`${info.location.region}, ${info.location.city} - ${info.location.postalCode}`)
       
       return (
         <div id="output" className ="infoBox">
@@ -19,9 +17,7 @@ import "../App.css"
               <li>{info.ip}</li>
               <li>{info.isp}</li>
               <li>{info.location.city + ", " + info.location.region + " " + info.location.postalCode}</li>
-              {/* <li>{area}</li> */}
               <li>{info.location.timezone}</li>
-              
             </ul>
             } 
           </div>   

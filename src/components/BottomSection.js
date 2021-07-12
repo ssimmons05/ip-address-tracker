@@ -8,7 +8,7 @@ const BottomSection = ({position}) => {
     
      <div id = "map">
       <MapContainer
-        style={{height: "60vh", zIndex: "-2"}}
+        style={{height: "75vh", zIndex: "-2"}}
         center={position}
         zoom={13}
         scrollWheelZoom={false}
@@ -16,7 +16,7 @@ const BottomSection = ({position}) => {
         <MapConsumer>
           {(map) => {
             map.setView(position);
-            console.log('map center:', map.getCenter());
+            // console.log('map center:', map.getCenter());
             return null;
           }}
         </MapConsumer>
@@ -39,5 +39,4 @@ const BottomSection = ({position}) => {
   )
 }
     
-
 export default BottomSection

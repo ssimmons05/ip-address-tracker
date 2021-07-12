@@ -7,7 +7,7 @@ import InfoBox from './components/InfoBox.js'
 
   const App = () => {
     
-    const [IPAddress, setIPAddress] = useState(''); //replace '8.8.8.8' with local computer's IP address)
+    const [IPAddress, setIPAddress] = useState(''); //defualt state is the local computer's IP address)
     const [info, setInfo] = useState({});
     const [longitude, setLongitude] = useState(0);
     const [latitude, setLatitude] = useState(0);
